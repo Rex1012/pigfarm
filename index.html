@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To 猪宝宝的情书</title>
-    <style>
+<style>
       body,
       html {
         margin: 0;
@@ -17,8 +11,24 @@
       .slideshow-container {
         height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+      .image-container {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       .slide {
         display: none;
@@ -94,6 +104,9 @@
   </head>
   <body>
     <div class="slideshow-container">
+      <div class="image-container">
+        <img src="pigandcow.jpg" alt="Love letter Image" />
+      </div>
       <div class="slide active">
         <h1>To猪宝宝的情书</h1>
         <p>
