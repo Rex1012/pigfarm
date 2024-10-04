@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To 猪宝宝的情书</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Arial", sans-serif;
+        background-color: #ffd6e0;
+        color: #4a4a4a;
+      }
+      .slideshow-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide {
+        display: none;
+        text-align: center;
+        padding: 40px;
+        max-width: 800px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      .slide.active {
+        display: block;
+        animation: fadeIn 1s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      h1 {
+        color: #ff4081;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 2em;
+        color: #ff4081;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      .nav-button:hover {
+        color: #ff80ab;
+      }
+      #prevBtn {
+        left: 20px;
+      }
+      #nextBtn {
+        right: 20px;
+      }
+      .progress-bar {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+      .progress-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ff80ab;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+      }
+      .progress-dot.active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="slide active">
+        <h1>To猪宝宝的情书</h1>
+        <p>
+          10月3日，今天是猪猪的公历生日，差不多是我们认识满两年。时间走的飞快，但我们的爱情似乎前进的更快。两年胜似十年！和猪猪留下了太多太多的记忆。真好。
+        </p>
+      </div>
+      <div class="slide">
+        <p>
+          记得当初第一次见到猪猪，是在周五桌游活动里。昊昊带着室友，走向Tony想去打个招呼。眼睛往里一瞥，咦，有一个带着眼镜的女生，笑得很灿烂，挺有意思。由于桌子满了，我就和其他朋友们隔壁开了火车，那晚上并没有机会认识猪猪，但留意到了一个爱笑的戴眼镜的"乖乖"女生~
+        </p>
+      </div>
+      <div class="slide">
+        <p>
+          不得不说真是缘分，我发起的Potato
+          chips爬山猪猪加入了。知道猪猪也是UCSD的，还是 "学妹
+          "，咳咳，我萌生了一些想要了解的兴趣。一路上相处下来很舒服，回想一下，猪猪当时就是小老鼠了。猪猪看完大家爬上石头后，跃跃欲试想要上去，站在石缝前马上怂了转换成小老鼠，溜了溜了，哈哈哈真可爱。
+        </p>
+      </div>
+      <div class="slide">
+        <p>
+          之后的日子里，我们之间似乎缘分不断。Triton 5K
+          的号码牌，狼人杀里的"默契"配合，相同的年龄离家留学，
+          都在10月的生日等等，仿佛我们就是天生一对！我心动了~
+        </p>
+        <p><em>"大灰狼"—来自某聪明牛牛的昵称。</em></p>
+      </div>
+      <div class="slide">
+        <p>
+          和猪猪交往的朦胧的日子里，我带着害怕，从未有过亲密关系的我还没来得及适应，闹出了不少尴尬和洋相。但我更多的是带着一种憧憬和对心上人的冲动，期待每一次与猪猪的相见。终于在两人勇敢之下，我们迈出了那一步，走到了一起，那一晚上我迟迟难以入睡，如大梦一场，嘿嘿—大灰狼把牛牛拿下啦！（玩笑）。
+        </p>
+        <p><em>我要让猪猪做最幸福的女生。—牛牛</em></p>
+      </div>
+      <div class="slide">
+        <p>
+          和猪猪在一起的日子每天都很精彩，有甜蜜，有小打闹，每天都是新的冒险。但爱情的魔力总是能帮我们重新凝聚在一起。可能这就是狗皮膏药和牛皮糖吧，哈哈哈哈~
+        </p>
+      </div>
+      <div class="slide">
+        <p>
+          这段日子里我似乎开放了许多，做了我很多自己缺乏动力，甚至未曾想过的冒险与挑战。在波多黎各的几番周折，与猪猪的夏威夷跳伞潜水挑战，第一次踏上欧洲板块，世界名画"倾斜的空气床垫"等等，每一次都带给了我惊喜和回忆。两个人的世界更五彩斑斓了。
+        </p>
+      </div>
+      <div class="slide">
+        <p>
+          2022年我们相识，2023年我们订婚，2024年我们领了证结了婚。虽然看似短短两年，但我们路途上一起经历的故事，一起看过的风景，一起感受对方的爱，还有准备要迎接我们家庭里的新成员小灰灰，让一切都丰富多彩，有你的日子真幸福，我滴老婆❤!
+        </p>
+      </div>
+      <div class="slide">
+        <p>
+          2025年，我要补上我亲爱的猪猪老婆婚礼，明媒正娶的把猪猪娶回家~
+          小灰灰的到来也让我要更加坚定和努力，为我们的pigfarm家家争取更美好的明天！牛牛和猪猪要一辈子相亲相爱，一起去看没看过的世界，相濡以沫，白头偕老，快快乐乐的过好每一个甜蜜的一天！
+        </p>
+      </div>
+      <div class="slide">
+        <p>（还有一起把小灰灰1号2号3号都抚养长大，嘿嘿）</p>
+      </div>
+      <button id="prevBtn" class="nav-button">❮</button>
+      <button id="nextBtn" class="nav-button">❯</button>
+    </div>
+    <div class="progress-bar"></div>
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const progressBar = document.querySelector(".progress-bar");
+
+      function showSlide(n) {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add("active");
+        updateProgressBar();
+      }
+
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+
+      prevBtn.addEventListener("click", prevSlide);
+      nextBtn.addEventListener("click", nextSlide);
+
+      function createProgressBar() {
+        for (let i = 0; i < slides.length; i++) {
+          const dot = document.createElement("div");
+          dot.classList.add("progress-dot");
+          progressBar.appendChild(dot);
+        }
+      }
+
+      function updateProgressBar() {
+        const dots = document.querySelectorAll(".progress-dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
+
+      createProgressBar();
+      updateProgressBar();
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") nextSlide();
+        if (e.key === "ArrowLeft") prevSlide();
+      });
+    </script>
+  </body>
+</html>
