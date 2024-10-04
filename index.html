@@ -1,4 +1,10 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Letter Slideshow with Music</title>
+    <style>
       body,
       html {
         margin: 0;
@@ -24,7 +30,6 @@
         justify-content: center;
         overflow: hidden;
       }
-
       .image-container img {
         width: 100%;
         height: 100%;
@@ -100,6 +105,27 @@
       .progress-dot.active {
         opacity: 1;
       }
+      #audioControl {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+      }
+      #audioControl button {
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: #ff4081;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      #audioControl input[type="range"] {
+        width: 100px;
+      }
     </style>
   </head>
   <body>
@@ -167,6 +193,24 @@
       <button id="nextBtn" class="nav-button">❯</button>
     </div>
     <div class="progress-bar"></div>
+
+    <audio id="backgroundMusic" loop autoplay>
+      <source src="Growing Fond of You.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div id="audioControl">
+      <button id="playPauseBtn">▶</button>
+      <input
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="1"
+        step="0.1"
+        value="0.5"
+      />
+    </div>
+
     <script>
       let currentSlide = 0;
       const slides = document.querySelectorAll(".slide");
@@ -214,6 +258,52 @@
         if (e.key === "ArrowRight") nextSlide();
         if (e.key === "ArrowLeft") prevSlide();
       });
+
+      // Audio control
+      const audio = document.getElementById("backgroundMusic");
+      const playPauseBtn = document.getElementById("playPauseBtn");
+      const volumeSlider = document.getElementById("volumeSlider");
+
+      // Function to play audio
+      function playAudio() {
+        audio
+          .play()
+          .then(() => {
+            playPauseBtn.textContent = "⏸";
+          })
+          .catch((error) => {
+            console.log("Playback prevented:", error);
+            playPauseBtn.textContent = "▶";
+          });
+      }
+
+      playPauseBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          playAudio();
+        } else {
+          audio.pause();
+          playPauseBtn.textContent = "▶";
+        }
+      });
+
+      volumeSlider.addEventListener("input", (e) => {
+        audio.volume = e.target.value;
+      });
+
+      // Play audio on the first user interaction with the page
+      document.body.addEventListener(
+        "click",
+        function playOnFirstInteraction() {
+          playAudio();
+          document.body.removeEventListener("click", playOnFirstInteraction);
+        },
+        { once: true }
+      );
+
+      // Remove the window load event listener that tried to autoplay
+
+      // Initialize the play/pause button to show play state
+      playPauseBtn.textContent = "▶";
     </script>
   </body>
 </html>
